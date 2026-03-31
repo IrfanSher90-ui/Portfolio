@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Resume Preview</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0;font-family:Arial, Helvetica, sans-serif}
+
+body{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+  transition:background 0.4s,color 0.4s;
+}
+
+body.light{
+  background:linear-gradient(135deg,#f5f7fa,#c3cfe2);
+  color:#111;
+}
+
+body.dark{
+  background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+  color:#fff;
+}
+
+.container{
+  width:100%;
+  max-width:750px;
+  text-align:center;
+}
+
+.top-bar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:15px;
+  gap:10px;
+}
+
+button{
+  padding:10px 16px;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+  font-size:14px;
+  transition:transform 0.2s,box-shadow 0.2s;
+}
+
+button:hover{
+  transform:translateY(-2px);
+  box-shadow:0 6px 15px rgba(0,0,0,0.2);
+}
+
+.toggle-btn{
+  background:#444;
+  color:#fff;
+}
+
+.download-btn{
+  background:#4CAF50;
+  color:#fff;
+}
+
+.resume-frame{
+  width:100%;
+  background:#fff;
+  padding:20px;
+  border-radius:16px;
+  box-shadow:0 12px 30px rgba(0,0,0,0.2);
+  transition:transform 0.3s, box-shadow 0.3s;
+}
+
+body.dark .resume-frame{
+  background:#1e1e1e;
+}
+
+.resume-frame:hover{
+  transform:scale(1.02);
+  box-shadow:0 20px 40px rgba(0,0,0,0.35);
+}
+
+.resume-frame img{
+  width:100%;
+  height:auto;
+  border-radius:10px;
+  object-fit:contain;
+}
+
+@media (max-width:600px){
+  .top-bar{
+    flex-direction:column;
+  }
+}
+</style>
+</head>
+
+<body class="light">
+
+<div class="container">
+
+  <div class="top-bar">
+    <button class="toggle-btn" onclick="toggleMode()">Toggle Dark / Light</button>
+    <a href="resume.png" download>
+      <button class="download-btn">Download Resume</button>
+    </a>
+  </div>
+
+  <div class="resume-frame">
+    <!-- Replace with your resume image -->
+    <img src="resume.jpg" alt="Resume Preview" />
+  </div>
+
+</div>
+
+<script>
+function toggleMode(){
+  const body=document.body;
+  if(body.classList.contains('light')){
+    body.classList.remove('light');
+    body.classList.add('dark');
+  }else{
+    body.classList.remove('dark');
+    body.classList.add('light');
+  }
+}
+</script>
+
+</body>
+</html>
