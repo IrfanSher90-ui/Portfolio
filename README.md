@@ -23,7 +23,7 @@ Welcome to my portfolio! This project showcases my journey as a developer, my te
 ##  Project Structure
 ```text
 Portfolio/
-├── index.html          # Main entry point
-├── resume.pdf          # Professional CV
-├── profile.png         # Profile Picture
-└── assets/             # Project screenshots and icons
+index.html          # Main entry point
+resume.pdf          # Professional CV
+profile.png         # Profile Picture
+assets/             # Project screenshots and icons
